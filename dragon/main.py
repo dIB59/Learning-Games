@@ -5,10 +5,13 @@ def main():
     
     number: int = random.randint(1, 2)
     
+    print(enter_cave(userInput, number))
+
+def enter_cave(userInput: str, number: int) -> str:
     if userInput == str(number):
-        print("You have entered the cave with the treasure!")
+        return("You have entered the cave with the treasure!")
     else:
-        print("You have entered the cave with the dragon!")
+        return("You have entered the cave with the dragon!")
 
 
 if __name__ == "__main__":
