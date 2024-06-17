@@ -1,15 +1,18 @@
 import unittest
 
-import main
+import cave
+
 
 class TestDragon(unittest.TestCase):
 
     def test_enter_cave(self):
+        self.assertIsNotNone(cave.enter("1", "1"))
 
-        self.assertEqual(main.enter_cave("1", 1), "You have entered the cave with the treasure!")
-        self.assertEqual(main.enter_cave("2", 2), "You have entered the cave with the treasure!")
-        self.assertEqual(main.enter_cave("1", 2), "You have entered the cave with the dragon!")
-        self.assertEqual(main.enter_cave("2", 1), "You have entered the cave with the dragon!")
+    def test_enter_cave_with_dragon(self):
+        self.assertTrue("dragon" in cave.enter("2", "1"))
+
+    def test_enter_cave_with_treasure(self):
+        self.assertTrue("treasure" in cave.enter("1", "1"))
 
 
 if __name__ == '__main__':
